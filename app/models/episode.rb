@@ -23,6 +23,13 @@ class Episode < ActiveRecord::Base
   after_create :increment_episodes_count
   after_destroy :decrement_episodes_count
   
+  named_scope :ordered,
+    :order => 'episodes.airdate ASC'
+  named_scope :ranked,
+    :order => 'episodes.rank DESC, episodes.total_votes_share DESC, episodes.total_votes_count DESC'
+  named_scope :top,
+    :conditions => ['episodes.total_votes_count >= ? OR episodes.total_votes_count >= ?', (Vote.count.to_f / Episode.count), 50]
+  
   protected
   
     # after_create

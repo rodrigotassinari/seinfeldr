@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20090713152211) do
     t.integer  "losing_votes_count",  :default => 0
     t.integer  "total_votes_count",   :default => 0
     t.float    "total_votes_share",   :default => 0.0
-    t.integer  "rank",                :default => 0
+    t.float    "rank",                :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20090713152211) do
     t.integer  "losing_votes_count",  :default => 0
     t.integer  "total_votes_count",   :default => 0
     t.float    "total_votes_share",   :default => 0.0
-    t.integer  "rank",                :default => 0
+    t.float    "rank",                :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20090713152211) do
     t.integer  "losing_votes_count",  :default => 0
     t.integer  "total_votes_count",   :default => 0
     t.float    "total_votes_share",   :default => 0.0
-    t.integer  "rank",                :default => 0
+    t.float    "rank",                :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20090713152211) do
     t.integer  "losing_votes_count",  :default => 0
     t.integer  "total_votes_count",   :default => 0
     t.float    "total_votes_share",   :default => 0.0
-    t.integer  "rank",                :default => 0
+    t.float    "rank",                :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

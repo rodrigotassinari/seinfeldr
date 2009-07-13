@@ -79,10 +79,11 @@ def build_episodes
     end
 
   end
-  puts "#{episodes.size} episodes loaded"
+  puts "#{episodes.size}/180 episodes loaded"
   episodes.each do |episode_params|
     Episode.create!(episode_params)
   end
+  puts "#{Episode.count}/180 episodes created"
 end
 
 def build_episode_hash(season, ep_data1, ep_data2)

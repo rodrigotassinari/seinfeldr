@@ -7,7 +7,7 @@ class CreateDirectors < ActiveRecord::Migration
       t.integer :losing_votes_count,  :default => 0
       t.integer :total_votes_count,   :default => 0
       t.float   :total_votes_share,   :default => 0.0
-      t.integer :rank,                :default => 0
+      t.float   :rank,                :default => 0.0
       t.timestamps
     end
     add_index :directors, :total_votes_share
