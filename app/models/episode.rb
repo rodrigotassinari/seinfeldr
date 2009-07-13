@@ -20,12 +20,12 @@ class Episode < ActiveRecord::Base
   validates_presence_of :season_id, :director_id, :title, :airdate, :production_code, :season_number, :series_number, :wikipedia_entry_url
   validates_uniqueness_of :title, :production_code
   
-  after_save :increment_episodes_count
+  after_create :increment_episodes_count
   after_destroy :decrement_episodes_count
   
   protected
   
-    # after_save
+    # after_create
     def increment_episodes_count
       self.director.increment!(:episodes_count)
       self.season.increment!(:episodes_count)
