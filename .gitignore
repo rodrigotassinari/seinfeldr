@@ -1,0 +1,16 @@
+.DS_Store
+log/*.log
+log/*.pid
+tmp/cache/*
+tmp/pids/*
+tmp/sessions/*
+tmp/sockets/*
+doc/api
+doc/app
+config/database.yml
+config/application.yml
+.project
+nbproject
+coverage
+public/stylesheets/application.css
+
