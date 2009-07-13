@@ -29,7 +29,7 @@ class Episode < ActiveRecord::Base
     def increment_episodes_count
       self.director.increment!(:episodes_count)
       self.season.increment!(:episodes_count)
-      self.writers.each { |w| w.increment!(:episodes_count) }
+      self.writers.each { |writer| writer.increment!(:episodes_count) }
       true
     end
     
@@ -37,7 +37,7 @@ class Episode < ActiveRecord::Base
     def decrement_episodes_count
       self.director.decrement!(:episodes_count)
       self.season.decrement!(:episodes_count)
-      self.writers.each { |w| w.decrement!(:episodes_count) }
+      self.writers.each { |writer| writer.decrement!(:episodes_count) }
       true
     end
     
