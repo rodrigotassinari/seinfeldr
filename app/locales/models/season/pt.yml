@@ -1,0 +1,14 @@
+pt:
+  activerecord:
+    models:
+      season: "temporada"
+    attributes:
+      season:
+        number: "número"
+        name: "nome"
+        wikipedia_entry_url: "url do artigo na wikipedia"
+        episodes_count: "quantidade de episódios"
+        rank: "posição"
+        created_at: "criada em"
+        updated_at: "atualizada em"
+

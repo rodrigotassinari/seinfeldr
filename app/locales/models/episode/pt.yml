@@ -1,0 +1,19 @@
+pt:
+  activerecord:
+    models:
+      episode: "episódio"
+    attributes:
+      episode:
+        director_id: "diretor"
+        season_id: "temporada"
+        title: "título"
+        summary: "sumário"
+        airdate: "data de exibição"
+        production_code: "código de produção"
+        season_number: "número na temporada"
+        series_number: "número na série"
+        wikipedia_entry_url: "url do artigo na wikipedia"
+        rank: "posição"
+        created_at: "criado em"
+        updated_at: "atualizado em"
+

@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  summary: MyText
+  director_id: 1
+  airdate: 2009-07-13
+  production_code: 1
+  season_id: 1
+  season_number: 1
+  series_number: 1
+  wikipedia_entry_url: MyString
+  winning_votes_count: 1
+  losing_votes_count: 1
+  total_votes_count: 1
+  total_votes_share: 1.5
+  rank: 1
+
+two:
+  title: MyString
+  summary: MyText
+  director_id: 1
+  airdate: 2009-07-13
+  production_code: 1
+  season_id: 1
+  season_number: 1
+  series_number: 1
+  wikipedia_entry_url: MyString
+  winning_votes_count: 1
+  losing_votes_count: 1
+  total_votes_count: 1
+  total_votes_share: 1.5
+  rank: 1

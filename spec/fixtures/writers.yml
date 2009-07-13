@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  episodes_count: 1
+  winning_votes_count: 1
+  losing_votes_count: 1
+  total_votes_count: 1
+  total_votes_share: 1.5
+  rank: 1
+
+two:
+  name: MyString
+  episodes_count: 1
+  winning_votes_count: 1
+  losing_votes_count: 1
+  total_votes_count: 1
+  total_votes_share: 1.5
+  rank: 1

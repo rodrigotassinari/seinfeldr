@@ -1,0 +1,10 @@
+pt:
+  activerecord:
+    models:
+      vote: "voto"
+    attributes:
+      vote:
+        winner_id: "vencedor"
+        loser_id: "perdedor"
+        created_at: "criado em"
+

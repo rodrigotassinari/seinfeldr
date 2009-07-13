@@ -1,0 +1,12 @@
+pt:
+  activerecord:
+    models:
+      director: "diretor"
+    attributes:
+      director:
+        name: "nome"
+        episodes_count: "quantidade de episódios"
+        rank: "posição"
+        created_at: "criado em"
+        updated_at: "atualizado em"
+
