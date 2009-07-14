@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090713152211) do
+ActiveRecord::Schema.define(:version => 20090714024342) do
 
   create_table "directors", :force => true do |t|
     t.string   "name"
@@ -36,13 +36,15 @@ ActiveRecord::Schema.define(:version => 20090713152211) do
     t.integer  "season_number"
     t.integer  "series_number"
     t.string   "wikipedia_entry_url"
-    t.integer  "winning_votes_count", :default => 0
-    t.integer  "losing_votes_count",  :default => 0
-    t.integer  "total_votes_count",   :default => 0
-    t.float    "total_votes_share",   :default => 0.0
-    t.float    "rank",                :default => 0.0
+    t.integer  "winning_votes_count",       :default => 0
+    t.integer  "losing_votes_count",        :default => 0
+    t.integer  "total_votes_count",         :default => 0
+    t.float    "total_votes_share",         :default => 0.0
+    t.float    "rank",                      :default => 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "seinfeldx_entry_url"
+    t.string   "seinfeldscripts_entry_url"
   end
 
   add_index "episodes", ["director_id"], :name => "index_episodes_on_director_id"

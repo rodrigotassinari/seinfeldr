@@ -2,17 +2,17 @@
 
 %h5 Season #{winner.season.number}, Episode #{winner.season_number} <abbr title="Production Code">(##{winner.production_code})</abbr>
 
+%p.voteLink= link_to_function "Vote", "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => "Vote for this episode"
+
 %p Directed by #{winner.director.name} and written by #{winner.writers.map(&:name).to_sentence}
 
 %p Originally aired on #{winner.airdate}
 
 %p.summary= winner.summary
 
-%p.voteLink= link_to_function "Vote", "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => "Vote for this episode"
-
 %p.external
   External References:
   %ul
-    %li= link_to 'Wikipedia Entry', "#{winner.wikipedia_entry_url}?KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
-    %li= link_to 'Script', "http://www.google.com/custom?q=#{winner.title}&sa=Search&sitesearch=www.seinfeldscripts.com&KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
-    %li= link_to 'Video', "http://www.seinfeldx.net/?searchfield=a.title&search=#{winner.title}&KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
+    %li= reference_link_to 'Wikipedia Entry', winner.wikipedia_entry_url
+    %li= reference_link_to 'Episode Script', winner.seinfeldscripts_entry_url
+    %li= reference_link_to 'Full Episode Video', winner.seinfeldx_entry_url

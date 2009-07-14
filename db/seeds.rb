@@ -113,8 +113,43 @@ def build_episode_hash(season, ep_data1, ep_data2)
   episode
 end
 
+def add_video_to_episodes
+  episodes = Episode.all
+  episodes.each do |episode|
+    log = "Fetch video for #{episode.title}..."
+    doc = Hpricot(open("http://www.seinfeldx.net/?searchfield=a.title&search=#{CGI.escape(episode.title)}"))
+    result = (doc/"span._alphatitle a")
+    unless result.empty?
+      puts "#{log} found!"
+      url = result.first['href']
+      url = "http://www.seinfeldx.net#{url}" if url.first == '/'
+      episode.update_attribute(:seinfeldx_entry_url, url)
+    else
+      puts "#{log} NOT FOUND!"
+    end
+  end
+end
+
+def add_script_to_episodes
+  episodes = Episode.all
+  episodes.each do |episode|
+    log = "Fetch script for #{episode.title}..."
+    doc = Hpricot(open("http://www.google.com/custom?sa=Search&sitesearch=www.seinfeldscripts.com&q=#{CGI.escape(episode.title)}"))
+    result = (doc/"div#res h2 a")
+    unless result.empty?
+      puts "#{log} found!"
+      url = result.first['href']
+      url = "http://www.seinfeldscripts.com#{url}" if url.first == '/'
+      episode.update_attribute(:seinfeldscripts_entry_url, url)
+    else
+      puts "#{log} NOT FOUND!"
+    end
+  end
+end
+
 build_seasons
 build_directors
 build_writers
 build_episodes
-
+add_video_to_episodes
+add_script_to_episodes
