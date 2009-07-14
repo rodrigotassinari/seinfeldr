@@ -1,1 +1,80 @@
+h1, h2
+  :margin-bottom 10px
 
+h1
+  :margin-top 10px
+
+a
+  :color blue
+  :text-decoration none
+  &:hover
+    :text-decoration underline
+
+span.reload
+  :font-size 16px
+  :color #333
+  :float right
+  :margin-top 8px
+  :margin-right 60px
+  a
+    :color blue
+
+div#votes
+
+  div.vote
+    :background-color #ddd
+    :-moz-border-radius 15px
+    :-webkit-border-radius 15px
+
+    div.inner
+      :padding 5px 8px
+
+    h3, h4, h5, h6, p, ul, li
+      :margin 0
+
+    p
+      :margin-bottom 1em
+      &.external
+        :margin 0 0 5px 0
+        span
+          :font-size 10px
+          :color #333
+      &.info
+        :font-style italic
+      &.voteLink
+        :margin 10px 60px
+        :text-align center
+        :font-size 16px
+        :font-weight bold
+        :letter-spacing 3px
+        a
+          :color #eee
+          :padding 5px 0
+          :display block
+          :text-decoration none
+          :background-color #2C8F4C
+          :-moz-border-radius 10px
+          :-webkit-border-radius 10px
+          &:hover
+            :background-color #40CF6E
+            :text-decoration none
+
+    abbr
+      :border-bottom 1px dotted #999
+    h5
+      abbr
+        :font-size 12px
+        :color #333
+
+    ul
+      :margin-bottom 5px
+    
+    li
+      :margin-left 20px
+
+  div.phrase
+    p
+      :margin 150px 0 0 0
+      :text-align center
+      :font-size 25px
+      :font-weight bold

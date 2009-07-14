@@ -1,20 +1,29 @@
 .grid_16
-  %h2 Which one is the best Seinfeld episode?
+  %h2
+    Which one is the best Seinfeld episode?
+    %span.reload Can't decide? #{link_to 'Try another pair', root_path}!
 
-  %p.explain Lorem ipsum dolor sic amet.
+  / %p.explain Lorem ipsum dolor sic amet.
 
-  %p.reload Can't decide? #{link_to 'Try another pair', root_path}!
+  / %p.reload Can't decide? #{link_to 'Try another pair', root_path}!
 
 #votes.grid_16
   - form_for Vote.new do |f|
     = f.hidden_field :winner_id
     = f.hidden_field :loser_id
 
-  #voteA.grid_7.alpha
-    = render :partial => 'episode', :locals => {:winner => @episodes[0], :loser => @episodes[1]}
+  #voteA.vote.grid_7.alpha
+    .inner
+      = render :partial => 'episode', :locals => {:winner => @episodes[0], :loser => @episodes[1]}
 
-  #or.grid_2
-    %p or
+  .phrase.grid_1
+    .inner
+      %p or
 
-  #voteB.grid_7.omega
-    = render :partial => 'episode', :locals => {:winner => @episodes[1], :loser => @episodes[0]}
+  #voteB.vote.grid_7
+    .inner
+      = render :partial => 'episode', :locals => {:winner => @episodes[1], :loser => @episodes[0]}
+
+  .phrase.grid_1.omega
+    .inner
+      %p ?

@@ -5,6 +5,7 @@ tmp/cache/*
 tmp/pids/*
 tmp/sessions/*
 tmp/sockets/*
+tmp/sass-cache/*
 doc/api
 doc/app
 config/database.yml

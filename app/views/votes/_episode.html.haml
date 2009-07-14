@@ -4,14 +4,17 @@
 
 %p.voteLink= link_to_function "Vote", "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => "Vote for this episode"
 
-%p Directed by #{winner.director.name} and written by #{winner.writers.map(&:name).to_sentence}
-
-%p Originally aired on #{winner.airdate}
-
 %p.summary= winner.summary
+
+%p.info
+  Directed by #{winner.director.name}.
+  Written by #{winner.writers.map(&:name).to_sentence}.
+  Originally aired on <abbr title="#{winner.airdate}">#{l winner.airdate, :format => :long}</abbr>
+
 
 %p.external
   External References:
+  %span (opens on a new window)
   %ul
     %li= reference_link_to 'Wikipedia Entry', winner.wikipedia_entry_url
     %li= reference_link_to 'Episode Script', winner.seinfeldscripts_entry_url
