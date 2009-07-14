@@ -29,6 +29,15 @@ class Episode < ActiveRecord::Base
     :order => 'episodes.rank DESC, episodes.total_votes_share DESC, episodes.total_votes_count DESC'
   named_scope :top,
     :conditions => ['episodes.total_votes_count >= ? OR episodes.total_votes_count >= ?', (Vote.count.to_f / Episode.count), 50]
+
+  def self.random_pair
+    eps = Episode.all(
+      :include => [:season, :director, :writers],
+      :order => "RAND()",
+      :limit => 2
+    )
+    eps.size == 2 ? eps : []
+  end
   
   protected
   
