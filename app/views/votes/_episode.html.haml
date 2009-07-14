@@ -13,11 +13,9 @@
 %p.external
   External References:
   %ul
-    %li= link_to 'Wikipedia Entry', winner.wikipedia_entry_url, :rel => 'facebox'
-    %li= link_to 'Teste', '#lalala', :rel => 'facebox'
-    %li= link_to 'Teste', '/', :rel => 'facebox'
+    %li= link_to 'Wikipedia Entry', "#{winner.wikipedia_entry_url}?KeepThis=true&TB_iframe=true&height=500&width=900", :class => 'thickbox'
     %li= link_to 'Script', '#TODO'
     %li= link_to 'Videos', '#TODO'
 
-#lalala(style='display: none;')
-  Opa, opa
+#lalala
+  Opa, opa dasdas
