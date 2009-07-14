@@ -7,9 +7,10 @@
 %p.summary= winner.summary
 
 %p.info
+  #{ordinal winner.series_number} #{t :series_episode}.
   #{t :directed} #{winner.director.name}.
   #{t :written} #{winner.writers.map(&:name).to_sentence}.
-  #{t :aired} <abbr title="#{winner.airdate}">#{l winner.airdate, :format => :long}</abbr>
+  #{t :aired} <abbr title="#{winner.airdate}">#{l winner.airdate, :format => :long}</abbr>.
 
 %p.external
   #{t :exteral_refs}:

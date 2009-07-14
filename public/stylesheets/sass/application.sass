@@ -32,28 +32,42 @@ div#subheader
     a
       :color blue
 
-div#votes
+div#votes, div#episodes
+  h3, h4, h5, h6, p, ul, li
+    :margin 0
+  p
+    :margin-bottom 1em
+    &.info
+      :font-style italic
+    &.external
+      :margin 0 0 5px 0
+      span
+        :font-size 10px
+        :color #333
+  ul
+    :margin-bottom 5px
+  
+  li
+    :margin-left 20px
+  abbr
+    :border-bottom 1px dotted #999
+  h5
+    abbr
+      :font-size 12px
+      :color #333
 
+div#votes
   div.vote
     :background-color #ddd
     :-moz-border-radius 15px
     :-webkit-border-radius 15px
-
     div.inner
       :padding 5px 8px
-
-    h3, h4, h5, h6, p, ul, li
-      :margin 0
-
+    h5
+      :color #555
+      abbr
+        :color #555
     p
-      :margin-bottom 1em
-      &.external
-        :margin 0 0 5px 0
-        span
-          :font-size 10px
-          :color #333
-      &.info
-        :font-style italic
       &.voteLink
         :margin 10px 60px
         :text-align center
@@ -61,7 +75,7 @@ div#votes
         :font-weight bold
         :letter-spacing 3px
         a
-          :color #eee
+          :color #fff
           :padding 5px 0
           :display block
           :text-decoration none
@@ -71,20 +85,6 @@ div#votes
           &:hover
             :background-color #40CF6E
             :text-decoration none
-
-    abbr
-      :border-bottom 1px dotted #999
-    h5
-      abbr
-        :font-size 12px
-        :color #333
-
-    ul
-      :margin-bottom 5px
-    
-    li
-      :margin-left 20px
-
   div.phrase
     p
       :margin 150px 0 0 0
@@ -93,4 +93,51 @@ div#votes
       :font-weight bold
 
 div#episodes
+  ul
+    li.rounded
+      :list-style-type none
+      :margin 0 70px 10px 15px
+      :padding 5px 8px
+      :background-color #ddd
+      :-moz-border-radius 15px
+      :-webkit-border-radius 15px
+  h4
+    span
+      :color #777
+  h5
+    :color #555
+    abbr
+      :color #555
+  h6.voting
+    :margin 4px 0 8px 0
+
+div.pagination
+  :margin-bottom 10px
+  :margin-left 15px
+  :text-align left
+  :padding .3em
+  a, span
+    :padding .2em .5em
+  span.disabled
+    :color #AAA
+  span.current
+    :font-weight bold
+    :color #FF0084
+  a
+    :border 1px solid #DDDDDD
+    :color #0063DC
+    :text-decoration none
+    &:hover, &:focus
+      :border-color #003366
+      :background #0063DC
+      :color white
+  .page_info
+    :color #aaa
+    :padding-top .8em
+  .prev_page, .next_page
+    :border-width 2px
+  .prev_page
+    :margin-right 1em
+  .next_page
+    :margin-left 1em
 

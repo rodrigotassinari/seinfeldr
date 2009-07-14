@@ -11,20 +11,22 @@
     %ul
       - position = @episodes.offset + 1
       - @episodes.each do |episode|
-        %li
-          %h5 ##{position}: #{episode.title}
-          %h6
+        %li.rounded
+          %h4
+            %span ##{position}
+            #{episode.title}
+          %h5
             #{t :season} #{episode.season.number}, 
             #{t :episode} #{episode.season_number} 
             <abbr title="#{t :production_code}">(##{episode.production_code})</abbr>
-          %p.voting
+          %h6.voting
             #{t :won} #{number_to_percentage (episode.rank * 100.0)} #{t :of} #{episode.total_votes_count} #{t :matches}.
           %p.summary= episode.summary
           %p.info
             #{ordinal episode.series_number} #{t :series_episode}.
             #{t :directed} #{episode.director.name}.
             #{t :written} #{episode.writers.map(&:name).to_sentence}.
-            #{t :aired} <abbr title="#{episode.airdate}">#{l episode.airdate, :format => :long}</abbr>
+            #{t :aired} <abbr title="#{episode.airdate}">#{l episode.airdate, :format => :long}</abbr>.
           %p.external
             #{t :exteral_refs}:
             %span (#{t :new_window_alert})
@@ -35,3 +37,4 @@
         - position += 1
     
     = will_paginate_t @episodes
+
