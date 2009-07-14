@@ -13,9 +13,6 @@
 %p.external
   External References:
   %ul
-    %li= link_to 'Wikipedia Entry', "#{winner.wikipedia_entry_url}?KeepThis=true&TB_iframe=true&height=500&width=900", :class => 'thickbox'
-    %li= link_to 'Script', '#TODO'
-    %li= link_to 'Videos', '#TODO'
-
-#lalala
-  Opa, opa dasdas
+    %li= link_to 'Wikipedia Entry', "#{winner.wikipedia_entry_url}?KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
+    %li= link_to 'Script', "http://www.google.com/custom?q=#{winner.title}&sa=Search&sitesearch=www.seinfeldscripts.com&KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
+    %li= link_to 'Video', "http://www.seinfeldx.net/?searchfield=a.title&search=#{winner.title}&KeepThis=true&TB_iframe=true&height=550&width=900", :class => 'thickbox'
