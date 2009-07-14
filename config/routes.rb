@@ -39,7 +39,9 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
 
-  map.resources :votes
+  map.resources :votes, :path_prefix => '/:locale'
+  
+  map.locale_root '/:locale', :controller => 'votes', :action => 'new'
 
   map.root :controller => 'votes', :action => 'new'
 

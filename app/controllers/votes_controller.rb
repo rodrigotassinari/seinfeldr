@@ -16,7 +16,7 @@ class VotesController < ApplicationController
     else
       flash[:error] = "Invalid vote"
     end
-    redirect_to root_path
+    redirect_to locale_root_path
   end
 
 end
