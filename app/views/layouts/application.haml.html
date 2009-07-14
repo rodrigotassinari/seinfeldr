@@ -22,7 +22,7 @@
     <script type="text/javascript"> 
     var IE6UPDATE_OPTIONS = {
     icons_path: "http://static.ie6update.com/hosted/ie6update/images/",
-    message: "Internet Explorer is missing updates required to view this site. Click here to update..."
+    message: "#{t :ie6_upgrade_message}"
     }
     </script>
     <script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
@@ -31,7 +31,9 @@
     %title Seinfeldr
   %body
     .container_16
-      .grid_16
+      #header.grid_16
         %h1 Seinfeldr
-      = yield
+      #content
+        / = display_flashes
+        = yield
 

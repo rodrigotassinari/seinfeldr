@@ -1,21 +1,20 @@
 %h3= winner.title
 
-%h5 Season #{winner.season.number}, Episode #{winner.season_number} <abbr title="Production Code">(##{winner.production_code})</abbr>
+%h5 #{t :season} #{winner.season.number}, #{t :episode} #{winner.season_number} <abbr title="#{t :production_code}">(##{winner.production_code})</abbr>
 
-%p.voteLink= link_to_function "Vote", "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => "Vote for this episode"
+%p.voteLink= link_to_function t(:vote), "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => t(:vote_title)
 
 %p.summary= winner.summary
 
 %p.info
-  Directed by #{winner.director.name}.
-  Written by #{winner.writers.map(&:name).to_sentence}.
-  Originally aired on <abbr title="#{winner.airdate}">#{l winner.airdate, :format => :long}</abbr>
-
+  #{t :directed} #{winner.director.name}.
+  #{t :written} #{winner.writers.map(&:name).to_sentence}.
+  #{t :aired} <abbr title="#{winner.airdate}">#{l winner.airdate, :format => :long}</abbr>
 
 %p.external
-  External References:
-  %span (opens on a new window)
+  #{t :exteral_refs}:
+  %span (#{t :new_window_alert})
   %ul
-    %li= reference_link_to 'Wikipedia Entry', winner.wikipedia_entry_url
-    %li= reference_link_to 'Episode Script', winner.seinfeldscripts_entry_url
-    %li= reference_link_to 'Full Episode Video', winner.seinfeldx_entry_url
+    %li= reference_link_to t(:wikipedia_link), winner.wikipedia_entry_url
+    %li= reference_link_to t(:script_link), winner.seinfeldscripts_entry_url
+    %li= reference_link_to t(:video_link), winner.seinfeldx_entry_url
