@@ -1,3 +1,8 @@
 en:
   top_seinfeld_episodes: "Top Seinfeld Episodes"
+  series_episode: "series episode"
+  won: "Won"
+  of: "of"
+  matches: "matches"
+  not_enough_episodes: "Not enough voted episodes to build a top episodes list yet. Keep voting!"
 

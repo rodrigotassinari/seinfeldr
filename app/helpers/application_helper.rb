@@ -37,6 +37,18 @@ module ApplicationHelper
     html
   end
   
+  def ordinal(int, gender='º')
+    if I18n.locale.to_sym == :en
+      int.ordinalize
+    else
+      "#{int}#{gender}"
+    end
+  end
+  
+  def will_paginate_t(collection)
+    will_paginate(collection, :prev_label => t(:prev_label), :next_label => t(:next_label))
+  end
+  
   def google_analytics_javascript(analytics_id)
     return unless Rails.env.production?
     <<-eos

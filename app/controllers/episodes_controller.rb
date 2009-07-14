@@ -1,9 +1,9 @@
 class EpisodesController < ApplicationController
 
   # GET /:locale/episodes
-  def new
+  def index
     @page_title = t(:top_seinfeld_episodes)
-    @episodes = Episode.top.ranked.paginate(params[:page])
+    @episodes = Episode.top.ranked.paginate(:page => params[:page], :per_page => 10)
   end
   
   # GET /:locale/episodes/:id

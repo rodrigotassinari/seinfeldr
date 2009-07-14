@@ -1,3 +1,8 @@
 pt:
   top_seinfeld_episodes: "Melhores Episódios de Seinfeld"
+  series_episode: "episódio da série"
+  won: "Ganhou"
+  of: "de"
+  matches: "confrontos"
+  not_enough_episodes: "Não há votos suficientes ainda para criar uma lista de melhores episódios. Continue votando!"
 

@@ -4,4 +4,6 @@ pt:
   voting: "Votação"
   see_the: "Veja os"
   top_episodes: "Melhores Episódios"
+  prev_label: "&laquo; Anterior"
+  next_label: "Próximo &raquo;"
 
