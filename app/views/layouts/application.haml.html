@@ -18,9 +18,20 @@
     = javascript_include_tag "curvycorners"
     = javascript_include_tag "application"
     
+    <!--[if IE 6]>
+    <script type="text/javascript"> 
+    var IE6UPDATE_OPTIONS = {
+    icons_path: "http://static.ie6update.com/hosted/ie6update/images/",
+    message: "Internet Explorer is missing updates required to view this site. Click here to update..."
+    }
+    </script>
+    <script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
+    <![endif]-->
+    
     %title Seinfeldr
   %body
     .container_16
       .grid_16
         %h1 Seinfeldr
       = yield
+
