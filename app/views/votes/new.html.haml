@@ -1,9 +1,9 @@
-.grid_16
-  %h2
-    =t :best_seinfeld_ep
-    %span.reload  #{t :cant_decide} #{link_to t(:try_another), locale_root_path}!
+- content_for :header do
+  %span #{t :see_the} #{link_to t(:top_episodes), '#TODO'}
 
-  / %p.explain Lorem ipsum dolor sic amet.
+#subheader.grid_16
+  %h2=t :best_seinfeld_ep
+  %span #{t :cant_decide} #{link_to t(:try_another), locale_root_path}!
 
 #votes.grid_16
   - form_for Vote.new do |f|
