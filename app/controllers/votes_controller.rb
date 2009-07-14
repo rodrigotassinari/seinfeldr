@@ -1,13 +1,14 @@
 class VotesController < ApplicationController
 
   # GET /
-  # GET /votes/new
+  # GET /:locale
+  # GET /:locale/votes/new
   def new
     @page_title = nil
     @episodes = Episode.random_pair
   end
 
-  # POST /votes
+  # POST /:locale/votes
   def create
     winner, loser = Episode.find(params[:vote][:winner_id]), Episode.find(params[:vote][:loser_id])
     vote = Vote.new(:winner => winner, :loser => loser)
