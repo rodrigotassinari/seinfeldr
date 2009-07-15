@@ -6,4 +6,4 @@ pt:
   top_episodes: "Melhores Episódios"
   prev_label: "&laquo; Anterior"
   next_label: "Próximo &raquo;"
-
+  change_locale: "Change site language"

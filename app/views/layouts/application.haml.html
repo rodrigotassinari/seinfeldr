@@ -38,4 +38,14 @@
         / = display_flashes
         = yield
       #footer.grid_16
+        %span.left
+          Powered by #{link_to 'PiTTlândia', 'http://pittlandia.net'}
+        %span.right
+          #{t :change_locale}:
+          - if I18n.locale.to_sym == :en
+            = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
+            = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
+          - else
+            = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
+            = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
     = google_analytics_javascript("UA-2436331-5")
