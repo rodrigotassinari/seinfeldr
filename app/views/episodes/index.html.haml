@@ -3,6 +3,7 @@
 
 #subheader.grid_16
   %h2=t :top_seinfeld_episodes
+  %span.stats= t :x_votes_in_y_episodes, :vote_count => Vote.count, :episode_count => Episode.count
 
 #episodes.grid_16
   - if @episodes.empty?

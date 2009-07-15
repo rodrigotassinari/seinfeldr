@@ -5,4 +5,5 @@ pt:
   of: "de"
   matches: "confrontos"
   not_enough_episodes: "Não há votos suficientes ainda para criar uma lista de melhores episódios. Continue votando!"
+  x_votes_in_y_episodes: "{{vote_count}} votos em {{episode_count}} episódios"
 

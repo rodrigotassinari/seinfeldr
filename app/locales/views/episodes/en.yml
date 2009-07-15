@@ -5,4 +5,5 @@ en:
   of: "of"
   matches: "matches"
   not_enough_episodes: "Not enough voted episodes to build a top episodes list yet. Keep voting!"
+  x_votes_in_y_episodes: "{{vote_count}} votes in {{episode_count}} episodes"
 
