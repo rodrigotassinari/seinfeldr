@@ -10,6 +10,14 @@ a
   &:hover
     :text-decoration underline
 
+.big_rounded
+  :-moz-border-radius 15px
+  :-webkit-border-radius 15px
+
+.small_rounded
+  :-moz-border-radius 10px
+  :-webkit-border-radius 10px
+
 div#header
   h1
     :float left
@@ -59,8 +67,6 @@ div#votes, div#episodes
 div#votes
   div.vote
     :background-color #ddd
-    :-moz-border-radius 15px
-    :-webkit-border-radius 15px
     div.inner
       :padding 5px 8px
     h5
@@ -80,8 +86,6 @@ div#votes
           :display block
           :text-decoration none
           :background-color #2C8F4C
-          :-moz-border-radius 10px
-          :-webkit-border-radius 10px
           &:hover
             :background-color #40CF6E
             :text-decoration none
@@ -94,13 +98,11 @@ div#votes
 
 div#episodes
   ul
-    li.rounded
+    li.episode
       :list-style-type none
       :margin 0 70px 10px 15px
       :padding 5px 8px
       :background-color #ddd
-      :-moz-border-radius 15px
-      :-webkit-border-radius 15px
   h4
     span
       :color #777

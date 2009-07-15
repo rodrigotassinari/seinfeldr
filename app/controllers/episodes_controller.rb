@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   # GET /:locale/episodes
   def index
     @page_title = t(:top_seinfeld_episodes)
-    @episodes = Episode.top.ranked.paginate(:page => params[:page], :per_page => 10)
+    @episodes = Episode.top.ranked.included.paginate(:page => params[:page], :per_page => 10)
   end
   
   # GET /:locale/episodes/:id
@@ -13,4 +13,3 @@ class EpisodesController < ApplicationController
   end
   
 end
-

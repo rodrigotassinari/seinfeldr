@@ -11,7 +11,7 @@
     %ul
       - position = @episodes.offset + 1
       - @episodes.each do |episode|
-        %li.rounded
+        %li.episode.big_rounded
           %h4
             %span ##{position}
             #{episode.title}

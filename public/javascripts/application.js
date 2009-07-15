@@ -8,5 +8,5 @@ function prepare_and_submit_vote_form(winner, loser) {
 }
 
 $(document).ready(function($) {
-  $('a[rel*=facebox]').facebox()
+  $('a[rel*=facebox]').facebox();
 })

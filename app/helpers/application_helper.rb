@@ -11,7 +11,8 @@ module ApplicationHelper
     link_to(
       text,
       "#{url}#{thickbox_url}",
-      :class => 'thickbox'
+      :class => 'thickbox',
+      :target => '_blank'
     )
   end
   
@@ -46,7 +47,7 @@ module ApplicationHelper
   end
   
   def will_paginate_t(collection)
-    will_paginate(collection, :prev_label => t(:prev_label), :next_label => t(:next_label))
+    will_paginate(collection, :previous_label => t(:prev_label), :next_label => t(:next_label))
   end
   
   def google_analytics_javascript(analytics_id)

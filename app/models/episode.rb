@@ -29,6 +29,8 @@ class Episode < ActiveRecord::Base
     :order => 'episodes.rank DESC, episodes.total_votes_share DESC, episodes.total_votes_count DESC'
   named_scope :top,
     :conditions => ['episodes.total_votes_count >= ? OR episodes.total_votes_count >= ?', (Vote.count.to_f / Episode.count), 50]
+  named_scope :included,
+    :include => [:season, :director, :writers]
 
   def self.random_pair
     eps = Episode.all(
@@ -37,6 +39,20 @@ class Episode < ActiveRecord::Base
       :limit => 2
     )
     eps.size == 2 ? eps : []
+  end
+
+  def recalculate_votes_share!(votes_count=nil)
+    votes_count ||= Vote.count
+    new_vote_share = (self.total_votes_count / votes_count.to_f)
+    self.update_attribute(:total_votes_share, new_vote_share)
+  end
+
+  def self.recalculate_votes_share!
+    episodes = Episode.all
+    votes_count = Vote.count
+    episodes.each do |episode|
+      episode.recalculate_votes_share!(votes_count)
+    end
   end
   
   protected

@@ -10,7 +10,7 @@
     = f.hidden_field :winner_id
     = f.hidden_field :loser_id
 
-  #voteA.vote.grid_7.alpha
+  #voteA.vote.big_rounded.grid_7.alpha
     .inner
       = render :partial => 'episode', :locals => {:winner => @episodes[0], :loser => @episodes[1]}
 
@@ -18,7 +18,7 @@
     .inner
       %p=t :or
 
-  #voteB.vote.grid_7
+  #voteB.vote.big_rounded.grid_7
     .inner
       = render :partial => 'episode', :locals => {:winner => @episodes[1], :loser => @episodes[0]}
 
