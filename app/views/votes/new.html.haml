@@ -12,7 +12,7 @@
 
   #voteA.vote.big_rounded.grid_7.alpha
     .inner
-      = render :partial => 'episode', :locals => {:winner => @episodes[0], :loser => @episodes[1]}
+      = render :partial => 'episode', :locals => {:winner => @episodes[0], :loser => @episodes[1], :key => 1}
 
   .phrase.grid_1
     .inner
@@ -20,7 +20,7 @@
 
   #voteB.vote.big_rounded.grid_7
     .inner
-      = render :partial => 'episode', :locals => {:winner => @episodes[1], :loser => @episodes[0]}
+      = render :partial => 'episode', :locals => {:winner => @episodes[1], :loser => @episodes[0], :key => 2}
 
   .phrase.grid_1.omega
     .inner

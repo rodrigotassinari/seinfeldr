@@ -7,3 +7,6 @@ en:
   prev_label: "&laquo; Previous"
   next_label: "Next &raquo;"
   change_locale: "Trocar idioma do site"
+  sending: "Sending..."
+  vote_via_keyboard: "Tip: vote also via keyboard shortcut. Type 1 or 2 to vote for the first or second option, respectively."
+

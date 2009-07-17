@@ -15,6 +15,7 @@
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"
     = javascript_include_tag "jrails"
     = javascript_include_tag "thickbox"
+    = javascript_include_tag "jquery.hotkeys"
     = javascript_include_tag "curvycorners"
     = javascript_include_tag "application"
     
@@ -28,8 +29,10 @@
     <script type="text/javascript" src="http://static.ie6update.com/hosted/ie6update/ie6update.js"></script>
     <![endif]-->
     
-    %title Quite the Conundrum :: #{@page_title}
+    %title Quite the Conundrum #{":: #{@page_title}" if @page_title}
   %body
+    #loading{:style => "display: none;"}
+      =t :sending
     .container_16
       #header.grid_16
         %h1 Quite the Conundrum...
@@ -38,14 +41,16 @@
         / = display_flashes
         = yield
       #footer.grid_16
-        %span.left
-          Powered by #{link_to 'PiTTlândia', 'http://pittlandia.net'}
-        %span.right
-          #{t :change_locale}:
-          - if I18n.locale.to_sym == :en
-            = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
-            = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
-          - else
-            = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
-            = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
+        %p=t :vote_via_keyboard
+        %p
+          %span.left
+            Powered by #{link_to 'PiTTlândia', 'http://pittlandia.net'} | 
+          %span.right
+            #{t :change_locale}:
+            - if I18n.locale.to_sym == :en
+              = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
+              = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
+            - else
+              = link_to image_tag('us.png', :alt => 'en-US'), locale_root_url(:locale => 'en'), :title => 'Inglês'
+              = link_to image_tag('br.png', :alt => 'pt-BR'), locale_root_url(:locale => 'pt'), :title => 'Português (Brasil)'
     = google_analytics_javascript("UA-2436331-5")

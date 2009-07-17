@@ -5,8 +5,7 @@ function prepare_and_submit_vote_form(winner, loser) {
   $('#votes form#new_vote #vote_winner_id').attr('value', winner)
   $('#votes form#new_vote #vote_loser_id').attr('value', loser)
   $('#votes form#new_vote').submit();
+  $('body > div.container_16').fadeTo('fast', 0.33);
+  $('#loading').show();
 }
 
-$(document).ready(function($) {
-  $('a[rel*=facebox]').facebox();
-})

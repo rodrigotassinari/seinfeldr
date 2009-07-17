@@ -7,3 +7,6 @@ pt:
   prev_label: "&laquo; Anterior"
   next_label: "Próximo &raquo;"
   change_locale: "Change site language"
+  sending: "Enviando..."
+  vote_via_keyboard: "Dica: vote também via atalho de teclado. Tecle 1 ou 2 para votar na primeira ou segunda opção, respectivamente."
+

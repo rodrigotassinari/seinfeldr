@@ -1,8 +1,12 @@
-%h3= winner.title
+%h3
+  = winner.title
+  = winner.id if Rails.env.development?
 
 %h5 #{t :season} #{winner.season.number}, #{t :episode} #{winner.season_number} <abbr title="#{t :production_code}">(##{winner.production_code})</abbr>
 
-%p.voteLink= link_to_function t(:vote), "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => t(:vote_title), :class => "small_rounded"
+%p.voteLink
+  = link_to_function t(:vote), "prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}');", :title => t(:vote_title), :class => "small_rounded"
+  = javascript_tag "$(document).ready(function($) { $(document).bind('keydown', '#{key}', function (evt){ prepare_and_submit_vote_form('#{winner.id}', '#{loser.id}'); return false; }); })"
 
 %p.summary= winner.summary
 
