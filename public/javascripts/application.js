@@ -10,3 +10,14 @@ function prepare_and_submit_vote_form(winner, loser, key) {
   $('body > div.container_16').fadeTo('fast', 0.33);
   $('#loading').show();
 }
+
+$(document).ready(function($) {
+
+  // binds '3' to calling the 'try another' link
+  $(document).bind('keydown', '3', function (event){
+    $('#try_another').effect("highlight");
+    window.location = $('#try_another').attr('href');
+    return false;
+  });
+
+})

@@ -3,7 +3,7 @@
 
 #subheader.grid_16
   %h2=t :best_seinfeld_ep
-  %span #{t :cant_decide} #{link_to t(:try_another), locale_root_path}!
+  %span #{t :cant_decide} #{link_to t(:try_another), locale_root_path, :id => 'try_another'}!
 
 #votes.grid_16
   - form_for Vote.new do |f|
